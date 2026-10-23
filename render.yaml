@@ -1,0 +1,16 @@
+services:
+  - type: web
+    name: vid-down
+    runtime: python
+    plan: free
+    buildCommand: pip install -r requirements.txt
+    startCommand: python bot.py
+    envVars:
+      - key: BOT_TOKEN
+        sync: false
+      - key: ALLOWED_USER_IDS
+        sync: false
+      - key: MAX_MB
+        value: "50"
+      - key: MAX_PARALLEL
+        value: "2"
